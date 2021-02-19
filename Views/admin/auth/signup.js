@@ -1,21 +1,6 @@
 const layout=require('../layout');
 
-const getError=(errors,property)=>{
-
-    //property is email||password||paswordConfirm
-
-    try{
-
-
-        return errors.mapped()[property].msg
-    }catch (err){
-        return '';
-    }
-
-
-};
-
-module.exports=({req,errors,local=['','','']})=>{
+module.exports=(local=Array(1000).fill(''))=>{
 
     return layout({
         
@@ -41,24 +26,21 @@ module.exports=({req,errors,local=['','','']})=>{
         <input type="button" id="mostrar" value="Mostrar palabras">
         <input type="button" id="ocultar" value="Ocultar palabras">
 
-        <form method="POST">
 
         <table id="tabla">
 
             <tr>
-        
-            <td id="first">${local[0]}<span><input type="button" value="Like" id="firstLike" class="btn"><input type="button" value="Dislike" id="firstDislike"></td>
-        
-            <td id="second">${local[1]} <span><input type="button" value="Like" id="secondLike" class="btn"><input type="button" value="Dislike" id="secondDislike"></td>
-        
-            <td id="third"> ${local[2]} <span><input type="button" value="Like" id="thirdLike" class="btn"><input type="button" value="Dislike" id="thirdDislike"></td>
+            <td>${local[0]}<span><input type="button" value="Like"  class="likeBtn"><input type="button" value="Dislike" class="DislikeBtn"></td>
+            <td>${local[1]}<span><input type="button" value="Like"  class="likeBtn"><input type="button" value="Dislike" class="DislikeBtn"></td>
+            <td>${local[2]}<span><input type="button" value="Like"  class="likeBtn"><input type="button" value="Dislike" class="DislikeBtn"></td>
+
+
         
             </tr>
         
         </table>
 
-    <input type="submit" value="Submit">
-    </form>
+   
 
     </div>
     <script src="main.js"></script>

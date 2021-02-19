@@ -1,7 +1,6 @@
 "use strict";
 const usersRepo=require('../../repositories/users')
 const express=require('express');
-const parse = require('node-html-parser').parse;
 const signUpTemplate=require('../../Views/admin/auth/signup');
 const { body } = require('express-validator');
 
@@ -29,14 +28,14 @@ const router=express.Router();
 
 
 router.get('/',(req,res)=>{
-    res.send(signUpTemplate({}));
+    res.send(signUpTemplate());
     
     });
 
 
 
 router.post('/',async (req,res)=>{
-    const errors=null;
+
     const {fname,lname,kname,nname} = req.body;
     var words=fname+' '+lname+' '+kname+' '+nname;
     var newone=await hyphenate_en(words);
@@ -54,11 +53,13 @@ router.post('/',async (req,res)=>{
     local.push(words);
     j++
     }
+
+
     console.log(local);
-    const root =parse(signUpTemplate({req,errors,local}));
-    console.log(root);
-    const body=root.querySelector('body');
-    console.log(body)
+    
+    
+    res.send(signUpTemplate(local));
+   
         
         });
 
