@@ -1,6 +1,21 @@
 const layout=require('../layout');
 
+
+
+
+
+
+
+
 module.exports=(local=Array(1000).fill(''))=>{
+
+
+    table=''
+    for (i = 0; i < 50; i++) {
+        table += `<td>${local[i]}<span><input type="button" value="Like"  class="likeBtn"><input type="button" value="Dislike" class="DislikeBtn"></td><tr><td><br></td></tr>`;
+    }
+
+
 
     return layout({
         
@@ -29,23 +44,22 @@ module.exports=(local=Array(1000).fill(''))=>{
 
         <table id="tabla">
 
-            <tr>
-            <td>${local[0]}<span><input type="button" value="Like"  class="likeBtn"><input type="button" value="Dislike" class="DislikeBtn"></td>
-            <td>${local[1]}<span><input type="button" value="Like"  class="likeBtn"><input type="button" value="Dislike" class="DislikeBtn"></td>
-            <td>${local[2]}<span><input type="button" value="Like"  class="likeBtn"><input type="button" value="Dislike" class="DislikeBtn"></td>
+            <tr>`+
 
-
+            
+            
+            table
         
-            </tr>
+           + `</tr>
         
         </table>
 
    
 
     </div>
-    <script src="main.js"></script>
+    <script src="main.js"></script>`
 
 
-`});
+});
 
 };

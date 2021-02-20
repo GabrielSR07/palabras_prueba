@@ -1,7 +1,6 @@
 const table = document.getElementById('tabla');
 table.style.display='none';
 
-
 var ocultar = document.getElementById('ocultar');
 var mostrar = document.getElementById('mostrar');
 
