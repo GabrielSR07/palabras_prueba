@@ -13,14 +13,7 @@ module.exports=({content})=>{
     
     
     ${content}
-    <footer>
-           <p class="footer__title">Generador de Palabras. Desarrollado por: Zeraug</p>
-           <p><a href='https://www.freepik.com/photos/background'>Background photo created by denamorado - www.freepik.com</a></p>
-       </footer>
     
-    
-    
-       
     </body>
 
 </html>

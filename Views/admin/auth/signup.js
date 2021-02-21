@@ -45,18 +45,18 @@ module.exports=(local=Array(1000).fill(''))=>{
        
         
         
-        <h2 class="titulo">Generador de nombre aleatorios</h2>
+        <h2 class="titulo">Generador de nombre aleatorios.</h2>
         <p class="descripcion">
-        En esta app, debes ingresar 4 palabras en el formulario y generaremos posibles nombres para tu empresa, los cuales debes calificar
+        En esta app, debes ingresar 4 palabras en el formulario y generaremos posibles nombres para tu empresa, los cuales debes calificar.
         </p>
 
+
+    <div class="content">
     <div id="tabla">
     <table>
 
     <tr>`+
 
-    
-    
     table
 
    + `</tr>
@@ -80,14 +80,15 @@ module.exports=(local=Array(1000).fill(''))=>{
         <input type="button" id="mostrar" value="Mostrar palabras" class="btn">
         <input type="button" id="ocultar" value="Ocultar palabras" class="btn">
     </div>
-
-
-
-
         </form>
-    
-        
 
+    </div>
+
+    <footer>
+           <p class="footer__title">Generador de Palabras. Desarrollado por: Zeraug</p>
+           <p><a href='https://www.freepik.com/photos/background'>Background photo created by denamorado - www.freepik.com</a></p>
+       </footer> 
+        
     <script src="main.js"></script>`
 
 
