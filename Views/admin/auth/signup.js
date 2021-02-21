@@ -11,7 +11,7 @@ module.exports=(local=Array(1000).fill(''))=>{
 
  
     table='';
-    let size = 39;
+    let size = 36;
     for (i = 0; i < size; i++) {
 
         if(i<(size/3)){
@@ -22,6 +22,14 @@ module.exports=(local=Array(1000).fill(''))=>{
         }
         else if(i>=(size/3)*2) {
             table += `<td class="columna"><p class="palabraArray">${local[i]}</p><span><input type="button" value="Like" class="likeBtn btn"><input type="button" value="Dislike" class="DislikeBtn btn"></td><tr><td><br></td></tr>`;
+        }
+
+
+        // Para que no se repitan las palabras
+
+       let word =  local[i].innerText;
+        if(table.includes(word)) {
+            local.splice(i,1);
         }
 
     }
